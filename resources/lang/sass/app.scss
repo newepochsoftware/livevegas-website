@@ -1,0 +1,407 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+/*
+Live Vegas Fonts
+*************************
+Futura PT Heavy
+font-family: futura-pt, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Futura PT Heavy Oblique
+font-family: futura-pt, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Futura PT Book
+font-family: futura-pt, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Futura PT Book Oblique
+font-family: futura-pt, sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Futura PT Bold
+font-family: futura-pt-bold, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Futura PT Bold Oblique
+font-family: futura-pt-bold, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Futura PT Cond Book
+font-family: futura-pt-condensed, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Futura PT Cond Book Oblique
+font-family: futura-pt-condensed, sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Futura PT Cond Bold
+font-family: futura-pt-condensed, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Futura PT Cond Bold Oblique
+font-family: futura-pt-condensed, sans-serif;
+font-weight: 700;
+font-style: italic; */
+
+body{
+  margin:0;
+  padding:0;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+html{
+  width:100%;
+  height:100%;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0px!important;
+    margin-top: .8rem;
+}
+.nav{
+  text-transform: uppercase;
+}
+.nav a{
+  color: #86939e;
+}
+.live-nav{
+  padding:20px 0;
+}
+.ticketmaster-logo{
+  width:209px;
+  float:right;
+}
+.hero{
+  width: 100%;
+  /* height: 630px; */
+  background-color:#ff0000;
+  overflow: hidden;
+}
+.hero img{
+  width:100%;
+}
+.filter{
+  background: #fff;
+  width:1120px;
+  margin-top: -20px;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #ccc;
+  -moz-border-radius: 5px;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  padding:30px 20px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.shows{
+  background-color: #d8d8d8;
+  padding: 100px 0 0;
+}
+.artist{
+  background-color: #d8d8d8;
+  padding: 80px 0 0;
+}
+.artist-dates {
+  width: 100px;
+  float: left;
+}
+.artist-get-tickets {
+  float: left;
+  width: 20%;
+  padding: 5px 0 0 0;
+}
+.artist-ticket-location {
+  padding: 13px 0 0 0;
+  float: left;
+  width: 62%;
+}
+.show-main-img{
+  width: 100%;
+  border-radius: 5px;
+}
+.show-main-img img{
+  width: 100%;
+}
+.show-dates{
+  width:25%;
+  float:left;
+}
+.show-info{
+  overflow: auto;
+  padding: 20px 5px;
+}
+.artist-purchase-info{
+  overflow: auto;
+  padding: 20px 5px;
+}
+.show-location{
+  width:75%;
+  float:left;
+}
+.show-container{
+  background-color:#fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #ccc;
+  -moz-border-radius: 5px;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  margin: 0 0 40px 0;
+}
+.artist-show-container{
+  background-color:#fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #ccc;
+  -moz-border-radius: 5px;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  margin: 0 0 20px 0;
+}
+.artist-container{
+  background-color:#fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #ccc;
+  -moz-border-radius: 5px;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  padding: 30px;
+}
+.show-next-show-title{
+  text-align: center;
+  color:#86939e;
+  font-size:10px;
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+}
+.show-next-show-month{
+  text-align: center;
+  color:#d62e2e;
+  font-size:30px;
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 24px;
+}
+.show-next-show-day{
+  text-align: center;
+  color:#000;
+  font-size:24px;
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 24px;
+}
+.filter-txt{
+  width: 100%;
+  font-size:18px;
+  text-align: center;
+  padding: 5px;
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  color:#86939e;
+}
+.show-location-title{
+  font-size:18px;
+  color:#86939e;
+  line-height: 18px;
+}
+.show-location-dates{
+  font-size:13px;
+  color:#86939e;
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 18px;
+}
+.show-location-place{
+  font-size:13px;
+  color:#86939e;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.shows-cart-button{
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #d62e2e;
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  padding: 12px 0 0 0;
+  font-size: 16px;
+  right: 0px;
+  margin: -30px 20px 0 0;
+  box-shadow: 1px 1px 3px #404040;
+  -moz-box-shadow: 1px 1px 3px #404040;
+}
+.leads-footer{
+  width:100%;
+  padding: 40px 0;
+  background-image: url('../images/newsletter-bg.jpg');
+  background-size: cover;
+}
+.leads-body{
+  background-color:#ffffff;
+  padding: 40px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.leads-cta-title{
+  font-size:48px;
+  color:#43484d;
+  font-family: futura-pt-condensed, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 38px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d62e2e;
+}
+.leads-cta-highlight{
+  color: #d62e2e;
+}
+.leads-cta-desc{
+  color:#43484d;
+  line-height: 30px;
+  font-size: 18px;
+}
+.leads-checkbox{
+  margin: 20px 0;
+}
+.disclaimer-txt{
+  font-size:12px;
+  padding: 10px 0;
+}
+.btn-search{
+  background-color:#86939e;
+  color:#fff;
+  width: 50%;
+  margin:auto
+}
+.livevegas-nav{
+  padding: 20px 0;
+}
+.navbar-nav{
+  text-transform: uppercase;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 15px!important;
+    padding-left: 15px!important;
+}
+.footer{
+  color:#86939e;
+  font-size: 16px;
+  padding: 20px 0;
+}
+.show-page-title{
+  text-transform: uppercase;
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 16px;
+  color:#454545;
+  text-align: center;
+}
+.show-page-subtitle{
+  text-transform: uppercase;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color:#86939e;
+  text-align: center;
+}
+.artist-show-page-titles{
+  padding: 20px 0;
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.house-location{
+  padding: 0 20px;
+}
+@media screen and (max-width: 1120px) {
+  .filter{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ticketmaster-logo{
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .btn-search{
+    width:100%;
+  }
+  .filter{
+    width: 100%;
+    position: relative;
+    margin: 20px 0;
+    border-radius: 0px;
+    margin: 0;
+  }
+  .select-area{
+    margin: 5px 0;
+  }
+  .shows {
+    background-color: #d8d8d8;
+    padding: 20px 0 0;
+  }
+  .nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    text-align: center;
+  }
+  .artist-get-tickets {
+    float: left;
+    width: 100%;
+    padding: 5px 0 0 0;
+  }
+  .artist-ticket-location {
+    padding: 4px;
+  }
+  .show-page-title{
+    font-size: 20px;
+    line-height: 17px;
+  }
+  .show-page-subtitle{
+    font-size: 12px;
+  }
+  .artist {
+      background-color: #d8d8d8;
+      padding: 0px;
+  }
+}
