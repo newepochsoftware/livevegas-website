@@ -1,4 +1,4 @@
-@extends('layouts.showsfrontend')
+@extends('layouts.press')
 
 @section('content')
 <div class="blog">

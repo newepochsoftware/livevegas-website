@@ -1,4 +1,4 @@
-@extends('layouts.showsfrontend')
+@extends('layouts.press')
 
 @section('content')
 <div class="blog">
@@ -10,7 +10,7 @@
           <div class="artist-show-page-titles">Latest Press</div>
           @foreach($blogs as $blog)
           <div class="blog-container">
-              <div class="blog-featured-image">
+              <div class="blog-featured-img">
                 <a href="/blog/{{ $blog->slug }}"><img src="{{ $blog->featured_image }}"></a>
               </div>
 

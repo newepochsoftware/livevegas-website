@@ -269,8 +269,16 @@ label {
   text-transform: uppercase;
   text-align: left;
 }
-.blog-featured-image{
+.blog-featured-img{
   width:300px;
+  float:left;
+  margin: 0 20px 20px 0;
+}
+.blog-featured-img img{
+  width:100%;
+}
+.blog-featured-image{
+  width:100%;
   float:left;
   margin: 0 20px 20px 0;
 }
