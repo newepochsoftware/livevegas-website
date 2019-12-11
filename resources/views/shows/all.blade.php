@@ -98,6 +98,7 @@
                 <div class="show-page-title"><% lvShow.artist_name %> - <% lvShow.show_name %></div>
                 <div class="show-page-subtitle"><% lvShow.venue_name %>, <% lvShow.venue_city %>, <% lvShow.venue_state %></div>
                 <div class="artist-show-location-dates">
+                  Next Show •
                   <% lvShow.latest_tickets_week_day %> •
                   <% lvShow.latest_tickets_date %> •
                   <% lvShow.latest_tickets_time %>
@@ -105,7 +106,7 @@
               </div>
 
               <div class="artist-get-tickets">
-                <a href="/shows/<% lvShow.slug %>" class="btn btn-danger btn-lg btn-block">View Show</a>
+                <a href="/shows/<% lvShow.slug %>" class="btn btn-danger btn-lg btn-block">View all shows</a>
               </div>
             </div>
           </div>

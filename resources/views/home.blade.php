@@ -141,6 +141,9 @@
                   </div>
                 </div>
               </div>
+              <a href="/shows/<% lvShow.slug %>" class="btn btn-danger btn-block">
+                View All Shows
+              </a>
             </div>
 
           </div>
