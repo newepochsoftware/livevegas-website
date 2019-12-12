@@ -28,8 +28,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="{{ asset('js/lightpick.js') }}"></script>
-    <script src="{{ asset('js/lv.js') }}"></script>
-
   </head>
   <body>
   <!--- Navigation -->

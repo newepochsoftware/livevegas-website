@@ -1,5 +1,5 @@
 <!doctype html>
-<html  ng-app="liveVegasApp" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html  lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,14 +9,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/kof2hht.css">
-    <link rel="stylesheet" href="{{ asset('css/lib/flatpickr/flatpickr.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/separate/vendor/flatpickr.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/separate/vendor/bootstrap-daterangepicker.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/lib/clockpicker/bootstrap-clockpicker.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/separate/vendor/bootstrap-select/bootstrap-select.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/lib/prism/prism.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/separate/vendor/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/separate/vendor/bootstrap-touchspin.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/lib/font-awesome/font-awesome.min.css') }}">
     <!-- <link rel="stylesheet" href="{{ asset('css/main.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('css/lightpick.css') }}">
@@ -24,7 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/lib/bootstrap/bootstrap.min.css') }}">
 
     <script src="{{ asset('js/lib/jquery/jquery-3.2.1.min.js') }}"></script>
-
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{ asset('js/lib/bootstrap/bootstrap.min.js') }}"></script>
   </head>
   <body>
   <!--- Navigation -->
@@ -134,6 +127,7 @@
         © 2019 Live Vegas | All rights reserved
     </div>
   </div>
+  <script src="{{ asset('js/app.js') }}"></script>
 
   </body>
 </html>
