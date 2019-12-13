@@ -134,7 +134,7 @@
   </div>
   <div class="footer">
     <div class="container">
-        © 2019 Live Vegas | All rights reserved
+        © 2019 Live Vegas All rights reserved | <a href="/privacy">Privacy Policy</a> |  <a href="https://help.ticketmaster.com/s/article/Terms-of-Use?language=en_US" target="_blank">Terms Of Use</a>
     </div>
   </div>
 

@@ -409,6 +409,12 @@ label {
   text-transform: uppercase;
   line-height: 24px;
 }
+.legal-row{
+  padding:50px 0;
+}
+.legal-row a{
+  color:#ff0000;
+}
 .filter-txt{
   width: 100%;
   font-size:18px;
@@ -523,6 +529,9 @@ label {
   color:#86939e;
   font-size: 16px;
   padding: 20px 0;
+}
+.footer a{
+  color:#86939e;
 }
 .show-page-title {
     text-transform: uppercase;

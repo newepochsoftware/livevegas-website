@@ -40,9 +40,8 @@ Route::any('/search',function(Request $request){
     return view('artist.index', compact('shows', 'tickets', 'venues', 'artists'));
 });
 
-Route::get('/admin', function () {
-    return view('auth/login');
-});
+Route::get('/admin', function () { return view('auth/login'); });
+Route::get('/privacy', function () { return view('legal/privacy'); });
 
 Route::get('/press', 'BlogController@press')->name('press');
 Route::resource('blog', 'BlogController');
