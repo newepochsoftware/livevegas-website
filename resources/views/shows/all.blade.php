@@ -223,8 +223,8 @@
           selectForward: true,
           format: 'MMM Do, YYYY',
           onSelect: function(start, end){
-              // var searchStartDate = start.format('YYYY-MM-DD');
-              // var searchEndDate = end.format('YYYY-MM-DD');
+              var searchStartDate = start.format('YYYY-MM-DD');
+              var searchEndDate = end.format('YYYY-MM-DD');
 
               var convertedStart = start.format('MMM Do, YYYY');
               var convertedEnd = end.format('MMM Do, YYYY');

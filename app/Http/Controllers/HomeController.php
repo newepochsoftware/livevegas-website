@@ -68,7 +68,7 @@ class HomeController extends Controller
     {
         $artists = Artists::all();
         $venues = Venue::all();
-        $shows = Shows::with('tickets', 'venues', 'artists', 'nextTickets', 'latestTickets')->get()->where('latestTickets.ticketDate', '>', date('Y-m-d'));
+        $shows = Shows::all();
         $tickets = Tickets::with('shows', 'venues')->where('ticketDate','>=',Carbon::now()->toDateString())->get()->sortBy('ticketDate');
         return response()->json(compact('artists', 'tickets', 'shows'), 200);
     }
