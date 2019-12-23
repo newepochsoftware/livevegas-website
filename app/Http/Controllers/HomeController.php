@@ -60,7 +60,7 @@ class HomeController extends Controller
 
     public function showAPI(Shows $shows)
     {
-        $shows = Shows::with('tickets', 'venues', 'artists', 'nextTickets', 'latestTickets')->get()->where('latestTickets.ticketDate', '>', date('Y-m-d'));
+        $shows = Shows::with('tickets', 'venues', 'artists')->get()->where('latestTickets.ticketDate', '>', date('Y-m-d'));
         return $shows->toJson();
     }
 
@@ -68,8 +68,16 @@ class HomeController extends Controller
     {
         $artists = Artists::all();
         $venues = Venue::all();
-        $shows = Shows::all();
-        $tickets = Tickets::with('shows')->where('ticketDate','>=',Carbon::now()->toDateString())->get()->sortBy('ticketDate');
+        $shows = Shows::with('tickets', 'venues', 'artists', 'nextTickets', 'latestTickets')->get()->where('latestTickets.ticketDate', '>', date('Y-m-d'));
+        $tickets = Tickets::with('shows', 'venues')->where('ticketDate','>=',Carbon::now()->toDateString())->get()->sortBy('ticketDate');
+        return response()->json(compact('artists', 'tickets', 'shows'), 200);
+    }
+    public function allshowsAPI(Shows $shows)
+    {
+        $artists = Artists::all();
+        $venues = Venue::all();
+        $shows = Shows::with('tickets', 'venues', 'artists', 'nextTickets', 'latestTickets')->get()->where('latestTickets.ticketDate', '>', date('Y-m-d'));
+        $tickets = Tickets::with('shows', 'venues')->where('ticketDate','>=',Carbon::now()->toDateString())->get()->sortBy('ticketDate');
         return response()->json(compact('artists', 'tickets', 'shows'), 200);
     }
 

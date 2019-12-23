@@ -108,7 +108,7 @@ class ShowController extends Controller
     {
         $shows = \App\Shows::where('slug', $slug)->firstOrFail();
         $mytime = Carbon::now();
-
+        // dd($shows->tickets);
         return view('shows.show', compact('shows','mytime'));
     }
 

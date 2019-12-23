@@ -23,3 +23,4 @@ use Illuminate\Http\Request;
 // Route::delete('artists/{artist}', 'ArtistsController@delete');
 Route::get('/shows', 'HomeController@showAPI');
 Route::get('/artists', 'HomeController@artistAPI');
+Route::get('/showlisting', 'HomeController@allshowsAPI');

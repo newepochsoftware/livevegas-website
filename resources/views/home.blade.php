@@ -229,7 +229,7 @@
                 tickets: value.tickets,
                 latest_tickets_month: moment(value.latest_tickets.ticketDate).format("MMM"),
                 latest_tickets_day: moment(value.latest_tickets.ticketDate).format("D"),
-                latest_tickets_date: moment(value.latest_tickets.ticketDate).format("MMM D"),
+                latest_tickets_date: moment(value.latest_tickets.ticketDate).format("MMM D, YYYY"),
                 latest_tickets_week_day: moment(value.latest_tickets.ticketDate).format("ddd"),
                 latest_tickets_time: moment(value.latest_tickets.ticketDate).format("LT")
               });

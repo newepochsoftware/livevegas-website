@@ -21,7 +21,7 @@ class Shows extends Model
   }
   public function latestTickets()
   {
-    return $this->hasOne(Tickets::class)->where('ticketDate', '>=', Carbon::now());
+    return $this->hasOne(Tickets::class)->where('ticketDate', '>=', Carbon::now())->orderBy('ticketDate', 'asc');
   }
   public function nextTickets()
   {

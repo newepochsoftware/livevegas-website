@@ -68,7 +68,7 @@
 
         <div class="col-md-8">
           <div class="artist-show-page-titles">{{ $shows->artists->name }}  Tickets at {{ $shows->venues->name }}</div>
-          @foreach($shows->tickets as $ticket)
+          @foreach($shows->tickets->sortBy('ticketDate') as $ticket)
           @if($ticket->ticketDate >= $mytime)
           <div class="artist-show-container">
             <div class="artist-purchase-info">
@@ -82,7 +82,7 @@
                 <div class="show-page-subtitle">{{ $shows->venues->name }}, {{ $shows->venues->city }}, {{ $shows->venues->state }}</div>
                 <div class="show-location-dates" style="text-align:center;">
                    {{ date('D', strtotime($ticket->ticketDate)) }} •
-                   {{ date('M j', strtotime($ticket->ticketDate)) }} •
+                   {{ date('M j, Y', strtotime($ticket->ticketDate)) }} •
                    {{ date('g:i a', strtotime($ticket->ticketDate)) }}
                 </div>
               </div>

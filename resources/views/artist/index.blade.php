@@ -39,7 +39,7 @@
   @endforeach
 ]
 </script>
-@extends('layouts.showsfrontend')
+@extends('layouts.press')
 
 @section('content')
 <div class="container-fluid">
@@ -49,7 +49,8 @@
     </div><br />
   @endif
   <div class="artist">
-    <div class="container" ng-controller="homecontroller">
+    <div class="container">
+
 
       <div class="row">
 
@@ -88,26 +89,4 @@
   </div>
 <div>
 
-  <script src="{{ asset('js/lib/popper/popper.min.js') }}"></script>
-  <script src="{{ asset('js/lib/tether/tether.min.js') }}"></script>
-  <script src="{{ asset('js/lib/bootstrap/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('js/plugins.js') }}"></script>
-
-  <script src="{{ asset('js/lib/moment/moment-with-locales.min.js') }}"></script>
-  <script src="{{ asset('js/lib/flatpickr/flatpickr.min.js') }}"></script>
-  <script src="{{ asset('js/lib/clockpicker/bootstrap-clockpicker.min.js') }}"></script>
-  <script src="{{ asset('js/lib/clockpicker/bootstrap-clockpicker-init.js') }}"></script>
-  <script src="{{ asset('js/lib/daterangepicker/daterangepicker.js') }}"></script>
-  <script src="{{ asset('js/lib/bootstrap-select/bootstrap-select.min.js') }}"></script>
-  <script src="{{ asset('js/lib/prism/prism.js') }}"></script>
-
-  <script>
-    angular.module('liveVegasApp', [],
-      function($interpolateProvider) {
-          $interpolateProvider.startSymbol('<%');
-          $interpolateProvider.endSymbol('%>');
-    })
-    .controller('homecontroller', function($scope, $http) {
-    })
-  </script>
 @endsection
