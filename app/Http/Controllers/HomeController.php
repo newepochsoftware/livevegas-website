@@ -123,7 +123,7 @@ class HomeController extends Controller
 
       echo json_encode(["status" => "success"]);
 
-      return redirect('/all-artists')->with('success', 'Thank You For Subscribing To Live Vegas!');
+      return redirect('/all-artists')->with('success', "You're on the Live Vegas list! You'll be the first to know about residency announcements, earlybird ticket sales, special offers, and Live Vegas giveaways for VIP experiences and meet & greets with artists!");
     }
 
     public function allartist()
@@ -143,7 +143,7 @@ class HomeController extends Controller
 
     public function showAPI(Shows $shows)
     {
-        $shows = Shows::with('tickets', 'venues', 'artists')->get()->where('latestTickets.ticketDate', '>', date('Y-m-d'));
+        $shows = Shows::with('tickets', 'venues', 'artists')->get()->where('latestTickets.ticketDate', '>=', date('Y-m-d'));
         return $shows->toJson();
     }
 

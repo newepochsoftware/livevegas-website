@@ -126,7 +126,6 @@
 
 @section('content')
 
-
 <!--- Hero Image -->
   <div class="hero">
     <div id="liveVegasCarousel" class="carousel slide" data-ride="carousel">
@@ -287,8 +286,8 @@
 
       "use strict";
       $scope.errorMessage = "";
-      $("#artists").each(function() { this.selectedIndex = 0 });
 
+      $("#artists").each(function() { this.selectedIndex = 0 });
 
       $http.get("api/shows").then(function(res) {
 

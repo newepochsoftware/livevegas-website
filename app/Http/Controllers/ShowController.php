@@ -62,7 +62,7 @@ class ShowController extends Controller
     {
         //
         $shows = new Shows();
-
+        dd($shows);
         if ($request->hasFile('hero_image')) {
           $hero_image = $request->file('hero_image');
           $name = time().'-'.$hero_image->getClientOriginalName();
@@ -107,7 +107,7 @@ class ShowController extends Controller
     public function show($slug)
     {
         $shows = \App\Shows::where('slug', $slug)->firstOrFail();
-        $mytime = Carbon::now();
+        $mytime = Carbon::now('PST');
         // dd($shows->tickets);
         return view('shows.show', compact('shows','mytime'));
     }
