@@ -5,7 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Live Vegas | Live Events, Concert Ticekts, Tour News, Venues</title>
+
+    <meta property="og:url" content="https://livevegas.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Live Vegas | Live Events, Concert Ticekts, Tour News, Venues">
+    <meta property="og:description" content="Buy concert tickets and get the latest tour news and artist insight on Live Vegas.">
+    <meta property="og:image" content="https://storage.googleapis.com/livevegas-bucket/livevegas-og.jpg">
+
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/kof2hht.css">
@@ -18,8 +25,22 @@
     <script src="{{ asset('js/lib/jquery/jquery-3.2.1.min.js') }}"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="{{ asset('js/lib/bootstrap/bootstrap.min.js') }}"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M3DP8BS');</script>
+    <!-- End Google Tag Manager -->
+
   </head>
   <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3DP8BS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!--- Navigation -->
   <header class="livevegas-nav">
     <div class="container">
@@ -55,79 +76,4 @@
 
   @yield('content')
 
-  <div class="leads-footer" id="subscribe">
-    <div class="container">
-      <div class="leads-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="leads-cta-title">
-              BE THE FIRST TO KNOW
-              WHAT'S <span class="leads-cta-highlight">LIVE</span> IN VEGAS!
-            </div>
-            <div class="leads-cta-desc">
-              Complete this form to receive our residency announcements, access to earlybird ticket sales, specials you don't want to miss, and exclusive access to Live Vegas giveaways for VIP experiences and
-              meet & greets with artists!
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="col-xs-12">
-               <label for="firstName">First Name*</label>
-               <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-               <div class="invalid-feedback">
-                 Valid first name is required.
-               </div>
-            </div>
-            <div class="col-xs-12">
-               <label for="lastName">Last name*</label>
-               <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-               <div class="invalid-feedback">
-                 Valid Last name is required.
-               </div>
-            </div>
-            <div class="col-xs-12">
-               <label for="email">Email*</label>
-               <input type="text" class="form-control" id="email" placeholder="" value="" required>
-               <div class="invalid-feedback">
-                 Valid Email is required.
-               </div>
-            </div>
-            <div class="col-xs-12">
-               <label for="phone">Phone*</label>
-               <input type="text" class="form-control" id="phone" placeholder="" value="" required>
-               <div class="invalid-feedback">
-                 Valid phone is required.
-               </div>
-            </div>
-            <div class="col-xs-12">
-               <label for="firstName">Zip Code*</label>
-               <input type="text" class="form-control" id="zipcode" placeholder="" value="" required>
-               <div class="invalid-feedback">
-                 Valid Zip Code is required.
-               </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="custom-control custom-checkbox leads-checkbox">
-               <input type="checkbox" class="custom-control-input" id="save-info">
-               <label class="custom-control-label age-label" for="save-info">I am 18 years of age or older.*</label>
-              </div>
-              <button class="btn btn-danger btn-lg btn-block" type="submit">Join Now</button>
-              <div class="disclaimer-txt">
-                By submitting this form, I agree by electronic signature to: (1) be contacted by SMS text at my mobile phone number and
-                by email (Consent is not required as a condition of purchase); and (2) the Privacy Policy and Terms of Use.
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="container">
-      © 2019 Live Vegas All rights reserved | <a href="/privacy">Privacy Policy</a> |  <a href="https://help.ticketmaster.com/s/article/Terms-of-Use?language=en_US" target="_blank">Terms Of Use</a>
-    </div>
-  </div>
-  <script src="{{ asset('js/app.js') }}"></script>
-
-  </body>
-</html>
+  @include('includes.footer')
