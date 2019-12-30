@@ -53,3 +53,4 @@ Route::resource('venues', 'VenuesController');
 Route::resource('shows', 'ShowController');
 Route::get('/all-shows', 'ArtistsController@index')->name('all-shows');
 Route::get('/all-artists', 'HomeController@allartist')->name('all-artists');
+Route::post('/submit', 'HomeController@store');

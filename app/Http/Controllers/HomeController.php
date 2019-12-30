@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use GuzzleHttp\Client;
 
 use App\Artists;
 use App\Venue;
@@ -41,6 +42,88 @@ class HomeController extends Controller
         $tickets = Tickets::with('shows')->where('ticketDate','>=',Carbon::now()->toDateString())->get()->sortBy('ticketDate');
         $ticketsUpdate = Tickets::with('shows')->where('ticketDate','>=',Carbon::now()->toDateString())->get()->sortBy('ticketDate');
         return view('home', compact('shows', 'tickets', 'venues', 'artists', 'mytime', 'hero', 'showList', 'ticketsUpdate'));
+    }
+
+    public function store(Request $request)
+    {
+
+        $profileName = "Default";
+        $ip = filter_input(INPUT_SERVER, "REMOTE_ADDR");
+        $post = json_encode($_POST);
+        error_log("Contest Lander [$profileName] [$ip] [$post]");
+
+        $api_email    = "amandamoore@livenation.com";
+        $dynamixkey   = "d8IFh_cde0673cde720f51977fdc8631a6d6ff70660348";
+        $glowfishkey  = "OUqdb_d43daa37acb2727401f575f11a1944439ca15713";
+
+        require_once 'nes/Colugo/API.php';
+
+        $user = new \Colugo\API\User($api_email, $glowfishkey);
+        $api = new \Colugo\API\API($user);
+
+        $queryString = filter_input(INPUT_POST, "query_string");
+        $qsMap = [
+            "Campaign"          => "campaign",
+            "Ad Group"          => "adgroupid",
+            "Feed Item Id"      => "feeditemid",
+            "Target Id"         => "targetid",
+            "Loc Physical Ms"   => "loc_physical_ms",
+            "Loc Interest Ms"   => "loc_interest_ms",
+            "Match Type"        => "matchtype",
+            "Network"           => "network",
+            "Device"            => "device",
+            "Device Model"      => "devicemodel",
+            "If Search"         => "ifsearch",
+            "If Content"        => "ifcontent",
+            "Creative"          => "creative",
+            "Keyword"           => "keyword",
+            "Placement"         => "placement",
+            "Ad Position"       => "adposition"
+        ];
+        $qs = [];
+        parse_str($queryString, $qs);
+
+        $firstName  = $request->get('firstName');
+        $lastName   = $request->get('lastName');
+        $email_addr = $request->get('email');
+        $phone      = $request->get('phone');
+        $zip        = $request->get('zipcode');
+        $optin      = $request->get('agecheck');
+        $lvToken    = filter_input(INPUT_POST, "leadverified_token");
+        $_SESSION["leadverified_token"] = $lvToken;
+
+        if ($firstName && $lastName && $email_addr) {
+            // must include first, last and email
+            $lead = new \Colugo\API\Lead();
+            $lead->setLeadSource("LIVEVEGAS");
+            $lead->setLeadIpAddress($ip);
+            $fields = [
+                "Profile"       => $profileName,
+                "First Name"    => $firstName,
+                "Last Name"     => $lastName,
+                "Mobile Phone"  => $phone,
+                "Email"         => $email_addr,
+                "Zip"           => $zip,
+                "Query String"  => $queryString,
+                "HTTP Referer"  => filter_input(INPUT_POST, "http_referer"),
+                "HTTP User Agent" => filter_input(INPUT_SERVER, "http_user_agent"),
+                "LeadVerified Token" => $lvToken
+            ];
+            foreach ($qsMap as $fieldName => $qName) {
+                if (isset($qs[$qName])) {
+                    $fields[$fieldName] = $qs[$qName];
+                }
+            }
+            $lead->setFields($fields);
+            $api->post($lead);
+            // store the lead id into the session
+            $_SESSION["lead_id"] = $lead->getId();
+
+        }
+
+      echo json_encode(["status" => "success"]);
+
+      return redirect('/all-artists')->with('success', 'Thank You For Subscribing To Live Vegas!');
     }
 
     public function allartist()

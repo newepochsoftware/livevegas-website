@@ -127,14 +127,14 @@
   </header>
 
 <div class="container-fluid">
-  @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}
-    </div><br />
-  @endif
   <div class="artist">
     <div class="container" ng-controller="homecontroller">
 
+      @if(session()->has('success'))
+          <div class="alert alert-success">
+              {{ session()->get('success') }}
+          </div>
+      @endif
       <!--- Filter -->
       <div class="all-artist-filter">
         <div class="row">
