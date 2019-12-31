@@ -218,8 +218,8 @@
                      <% lvShow.latest_tickets_time %>
                   </div>
                   <div class="show-location-place">
-                    <% lvShow.venue_name %> ,
-                    <% lvShow.venue_city %> ,
+                    <% lvShow.venue_name %>,
+                    <% lvShow.venue_city %>,
                     <% lvShow.venue_state %>
                   </div>
                 </div>
