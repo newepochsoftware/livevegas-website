@@ -9,7 +9,7 @@ class Shows extends Model
 {
   public function tickets()
   {
-    return $this->hasMany(Tickets::class)->where('ticketDate', '>=', Carbon::now('PST'))->orderBy('ticketDate', 'asc');
+    return $this->hasMany(Tickets::class)->where('ticketDate', '>=', Carbon::now('UTC'))->orderBy('ticketDate', 'asc');
   }
   public function artists()
   {
@@ -21,7 +21,7 @@ class Shows extends Model
   }
   public function latestTickets()
   {
-    return $this->hasOne(Tickets::class)->where('ticketDate', '>=', Carbon::now('PST'))->orderBy('ticketDate', 'asc');
+    return $this->hasOne(Tickets::class)->where('ticketDate', '>=', Carbon::now('UTC'))->orderBy('ticketDate', 'asc');
   }
   public function nextTickets()
   {
