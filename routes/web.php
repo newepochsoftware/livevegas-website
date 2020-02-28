@@ -19,6 +19,8 @@ use App\Artists;
 use App\Venue;
 use App\Tickets;
 use App\Shows;
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -53,4 +55,3 @@ Route::resource('venues', 'VenuesController');
 Route::resource('shows', 'ShowController');
 Route::get('/all-shows', 'ArtistsController@index')->name('all-shows');
 Route::get('/all-artists', 'HomeController@allartist')->name('all-artists');
-Route::post('/submit', 'HomeController@store');
