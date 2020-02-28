@@ -49,7 +49,7 @@ class BlogController extends Controller
     return view('blog.create');
   }
 
-  public function saveBlog(Request $request)
+  public function store(Request $request)
   {
     $blog = new Blog();
 

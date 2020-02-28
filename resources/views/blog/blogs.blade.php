@@ -1,3 +1,37 @@
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Blog",
+    "blogPost": {
+      "@type": "BlogPosting",
+      "headline": "{{$blogs->title}}",
+      "mainEntityOfPage": "{{$blogs->title}}",
+      "datePublished": "{{ date('c', strtotime($blogs->created_at)) }}",
+      "dateModified": "{{ date('c', strtotime($blogs->created_at)) }}",
+      "text": "{!! str_limit( $blogs->description, $limit = 160) !!}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ $blogs->featured_image }}"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Live Nation",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.livevegas.com/images/logo.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Live Nation",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.livevegas.com/images/logo.png"
+        }
+      }
+    }
+  }
+</script>
 @extends('layouts.press')
 
 @section('content')

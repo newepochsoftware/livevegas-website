@@ -1,3 +1,41 @@
+<script type="application/ld+json">
+[
+  @foreach($blogs as $blog)
+  {
+    "@context": "http://schema.org/",
+    "@type": "Blog",
+    "blogPost": {
+      "@type": "BlogPosting",
+      "headline": "{!! str_limit( $blog->title, $limit = 105) !!}",
+      "mainEntityOfPage": "{!! str_limit( $blog->title, $limit = 105) !!}",
+      "datePublished": "{{ date('c', strtotime($blog->created_at)) }}",
+      "dateModified": "{{ date('c', strtotime($blog->created_at)) }}",
+      "text": "{!! str_limit( $blog->description, $limit = 105) !!}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ $blog->featured_image }}"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Live Nation",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.livevegas.com/images/logo.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Live Nation",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.livevegas.com/images/logo.png"
+        }
+      }
+    }
+  }@if (!$loop->last),@endif
+    @endforeach
+]
+</script>
 @extends('layouts.press')
 
 @section('content')
