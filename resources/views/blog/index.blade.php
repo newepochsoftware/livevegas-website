@@ -30,7 +30,13 @@
        <td>{{$blog->status}}</td>
        <td><a href="{{ route('blog.show',$blog->slug)}}" target="_blank" class="btn btn-success">View</a></td>
        <td><a href="{{ route('blog.edit',$blog->id)}}" class="btn btn-primary">Edit</a></td>
-       <td><a href="{{ route('blog.edit',$blog->id)}}" class="btn btn-danger">Delete</a></td>
+       <td>
+         <form action="{{ route('blog.destroy', $blog->id)}}" method="post">
+           @csrf
+           @method('DELETE')
+           <button class="btn btn-danger" type="submit">Delete</button>
+         </form>
+       </td>
      </tr>
    @endforeach
    </tbody>

@@ -139,5 +139,12 @@ class BlogController extends Controller
 
     return view('blog.blogs',compact('blogs', 'shows', 'artists', 'tickets'));
   }
+  public function destroy($id)
+  {
+    $blogs = Blog::find($id);
+    $blogs->delete();
+
+    return redirect('blog')->with('success', 'Article Deleted Successfully :)');
+  }
 
 }
