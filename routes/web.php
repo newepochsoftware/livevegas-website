@@ -43,6 +43,7 @@ Route::any('/search',function(Request $request){
 });
 
 Route::get('/admin', function () { return view('auth/login'); });
+Route::get('/my-info', function () { return view('legal/dontsell'); });
 Route::get('/privacy', function () { return view('legal/privacy'); });
 
 Route::get('/press', 'BlogController@press')->name('press');
