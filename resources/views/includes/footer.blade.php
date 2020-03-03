@@ -38,13 +38,13 @@
                  Valid Email is required.
                </div>
             </div>
-            <div class="col-xs-12">
+            <!-- <div class="col-xs-12">
                <label for="phone">Phone*</label>
                <input type="text" class="form-control" id="phone" name="phone" placeholder="" value="" required>
                <div class="invalid-feedback">
                  Valid phone is required.
                </div>
-            </div>
+            </div> -->
             <div class="col-xs-12">
                <label for="firstName">Zip Code*</label>
                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="" value="" required>
@@ -59,7 +59,7 @@
               </div>
               <button class="btn btn-danger btn-lg btn-block" type="submit">Join Now</button>
               <div class="disclaimer-txt">
-                By submitting this form, I agree by electronic signature to: (1) be contacted by SMS text at my mobile phone number and
+                By submitting this form, I agree by electronic signature to: (1) be contacted
                 by email (Consent is not required as a condition of purchase); and (2) the <a href="/privacy">Privacy Policy</a> and <a href="https://help.ticketmaster.com/s/article/Terms-of-Use?language=en_US" target="_blank">Terms of Use</a>.
               </div>
             </div>
@@ -72,7 +72,7 @@
 </div>
 <div class="footer">
   <div class="container">
-      © 2020 Live Vegas All rights reserved | <a href="/privacy">Privacy Policy</a> |  <a href="https://help.ticketmaster.com/s/article/Terms-of-Use?language=en_US" target="_blank">Terms Of Use</a>
+      © 2020 Live Vegas All rights reserved | <a href="/privacy">Privacy Policy</a> |  <a href="/my-info">Do Not Sell My Info</a> | <a href="https://help.ticketmaster.com/s/article/Terms-of-Use?language=en_US" target="_blank">Terms Of Use</a>
   </div>
 </div>
 
