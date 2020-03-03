@@ -82,6 +82,8 @@ class BlogController extends Controller
     $blog->slug = $slug;
     $blog->createBlog($request->all());
 
+    $blog->save();
+
     return redirect('blog')->with('success', 'New blog has been created successfully :)');
   }
 

@@ -65,8 +65,9 @@
                 </div>
               </div>
           </div>
+          @endforeach
+
         </div>
-        @endforeach
 
         <div class="col-md-4">
           <div class="artist-show-page-titles">Upcoming Shows</div>
