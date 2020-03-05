@@ -20,8 +20,8 @@
        <div class="card-body">
          <div class="row">
           <div class="col-md-9">
-             <form method="post" action="{{url('blog')}}">
-
+             <form method="post" action="{{url('blog')}}"  enctype="multipart/form-data">
+                 @csrf
                  <div class="form-group">
                    <input type="hidden" value="{{csrf_token()}}" name="_token" />
                    <label for="title">Title:</label>

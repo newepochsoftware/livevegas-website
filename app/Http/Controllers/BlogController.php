@@ -71,6 +71,8 @@ class BlogController extends Controller
       $blog->featured_image = '/'. $destinationPath . '/'. $featureName;
     }
 
+    // dd($blog->featured_image);
+
     $slug = $request->get('title');;
     $slug = str_replace(' ', '-', $slug); // Replaces all spaces with hyphens.
     $slug = preg_replace('/[^A-Za-z0-9\-]/', '', $slug); // Removes special chars.
@@ -80,6 +82,7 @@ class BlogController extends Controller
     $blog->status = $request->get('status');
     $blog->description = $press;
     $blog->slug = $slug;
+
     $blog->createBlog($request->all());
 
     $blog->save();

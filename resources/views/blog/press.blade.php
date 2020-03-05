@@ -59,7 +59,7 @@
                    {{ date('M j', strtotime($blog->created_at)) }} •
                    {{ date('g:i a', strtotime($blog->created_at)) }}
                 </div>
-                {!! str_limit( $blog->description, $limit = 160) !!}
+                {!! str_limit( $blog->description, $limit = 100) !!}
                 <div class="artist-get-tickets">
                   <a href="/blog/{{ $blog->slug }}" class="btn btn-danger btn-lg btn-block">Read More</a>
                 </div>
