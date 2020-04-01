@@ -38,13 +38,13 @@
                  Valid Email is required.
                </div>
             </div>
-            <!-- <div class="col-xs-12">
+            <div class="col-xs-12">
                <label for="phone">Phone*</label>
                <input type="text" class="form-control" id="phone" name="phone" placeholder="" value="" required>
                <div class="invalid-feedback">
                  Valid phone is required.
                </div>
-            </div> -->
+            </div>
             <div class="col-xs-12">
                <label for="firstName">Zip Code*</label>
                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="" value="" required>

@@ -24,6 +24,8 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::any('/submit', 'HomeController@store')->name('submit');
+Route::any('/thank-you', 'HomeController@allartist')->name('thank-you');
 Route::any('/search',function(Request $request){
     $filterFromDate = $request->get( 'filterFromDatetxt' );
     $filterToDate = $request->get( 'filterToDatetxt' );

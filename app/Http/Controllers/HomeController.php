@@ -123,7 +123,7 @@ class HomeController extends Controller
 
       echo json_encode(["status" => "success"]);
 
-      return redirect('/all-artists')->with('success', "You're on the Live Vegas list! You'll be the first to know about residency announcements, earlybird ticket sales, special offers, and Live Vegas giveaways for VIP experiences and meet & greets with artists!");
+      return redirect('/thank-you')->with('success', "You're on the Live Vegas list! You'll be the first to know about residency announcements, earlybird ticket sales, special offers, and Live Vegas giveaways for VIP experiences and meet & greets with artists!");
     }
 
     public function allartist()
