@@ -35,7 +35,7 @@
                <label for="email">Email*</label>
                <input type="text" class="form-control" id="email" name="email" placeholder="" value="" required>
                <div class="invalid-feedback">
-                 Valid Email is required.
+                 Valid Email is required.php
                </div>
             </div>
             <div class="col-xs-12">

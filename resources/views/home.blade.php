@@ -175,7 +175,7 @@
           </select>
         </div>
 
-        <div class="col">
+        <div class="col-md-2">
           <button ng-click="resetFilter()" class="btn btn-danger btn-block" type="submit">
             Reset All Filters
           </button>

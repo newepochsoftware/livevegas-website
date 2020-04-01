@@ -586,6 +586,14 @@ label {
   .ticketmaster-logo{
     display: none;
   }
+  .show-next-show-month {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .show-location-title {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 @media screen and (max-width: 767px) {
   .artist-thumb {
