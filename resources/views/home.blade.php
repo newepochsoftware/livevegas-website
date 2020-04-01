@@ -193,10 +193,15 @@
 
           <div ng-model="artist" class="col-md-4 col-sm-6" ng-repeat="lvShow in lvShows | orderBy:'latest.ticketDate'">
 
-            <div class="show-container">
+            <div class="show-container" itemscope itemtype="http://schema.org/MusicEvent">
+              <meta itemprop="eventStatus" content="Active" />
+              <meta itemprop="eventAttendanceMode" content="offline" />
+              <meta itemprop="endDate" content="<% lvShow.offer_date %>" />
+
+              <span style="display:none;" itemprop="description"><% lvShow.description %></span>
               <div class="show-main-img">
                 <a href="/shows/<% lvShow.slug %>">
-                  <img src="<%lvShow.featured_image%>" alt="<% lvShow.artist_name %>">
+                  <img itemprop="image" src="<%lvShow.featured_image%>" alt="<% lvShow.artist_name %>">
                 </a>
               </div>
               <a href="/shows/<% lvShow.slug %>">
@@ -209,18 +214,40 @@
                   <div class="show-next-show-day"><% lvShow.latest_tickets_day %></div>
                 </div>
                 <div class="show-location">
-                  <div class="show-location-title">
-                    <a href="/shows/<% lvShow.slug %>"><% lvShow.artist_name %> - <% lvShow.show_name %></a>
+                  <meta itemprop="name" content="<% lvShow.show_name %>"/>
+
+                  <div class="show-location-title" itemprop="performer" itemscope="" itemtype="http://schema.org/MusicGroup">
+                    <a href="/shows/<% lvShow.slug %>">
+                      <span itemprop="name"><% lvShow.artist_name %></span> - <% lvShow.show_name %>
+                    </a>
                   </div>
                   <div class="show-location-dates">
-                     <% lvShow.latest_tickets_week_day %> •
-                     <% lvShow.latest_tickets_date %> •
-                     <% lvShow.latest_tickets_time %>
+                    <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                      <meta itemprop="url" content="https://www.livevegas.com/shows/<% lvShow.slug %>"/>
+                      <link itemprop="availability" href="http://schema.org/InStock" />
+                      <meta itemprop="price" content="<% lvShow.price %>"/>
+                      <meta itemprop="priceCurrency" content="USD" />
+                      <meta itemprop="validFrom" content="<% lvShow.offer_date %>" />
+                    </span>
+
+                    <meta itemprop="startDate" content="<% lvShow.offer_date %>" />
+
+                    <% lvShow.latest_tickets_week_day %> •
+                    <% lvShow.latest_tickets_date %> •
+                    <% lvShow.latest_tickets_time %>
                   </div>
-                  <div class="show-location-place">
-                    <% lvShow.venue_name %>,
-                    <% lvShow.venue_city %>,
-                    <% lvShow.venue_state %>
+                  <div class="show-location-place" itemprop="location" itemscope="" itemtype="http://schema.org/MusicVenue">
+
+                    <span itemprop="name"><% lvShow.venue_name %></span>,
+
+                    <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                      <span itemprop="addressLocality"><% lvShow.venue_city %></span>,
+                      <span itemprop="addressRegion"><% lvShow.venue_state %></span>
+
+                      <meta itemprop="postalCode" content="<% lvShow.venue_zip %>" />
+                      <meta itemprop="addressLocality" content="<% lvShow.venue_city %>" />
+                    </span>
+
                   </div>
                 </div>
               </div>
@@ -294,6 +321,7 @@
         var events = [];
         var ticketDates = [];
         var eventInfo = res.data;
+        var length = 200;
 
         $scope.artistFitered = false;
         $scope.datesFitered = false;
@@ -305,11 +333,16 @@
                 slug: value.slug,
                 artist_name: value.artists.name,
                 venue_name: value.venues.name,
+                venue_address: value.venues.address,
                 venue_city: value.venues.city,
+                venue_zip: value.venues.zip,
                 venue_state: value.venues.state,
                 featured_image: value.featured_image,
                 latest: value.latest_tickets,
                 tickets: value.tickets,
+                price: value.price,
+                description: value.description.substring(0, length),
+                offer_date: value.latest_tickets.ticketDate,
                 latest_tickets_month: moment(value.latest_tickets.ticketDate).format("MMM"),
                 latest_tickets_day: moment(value.latest_tickets.ticketDate).format("D"),
                 latest_tickets_date: moment(value.latest_tickets.ticketDate).format("MMM D, YYYY"),
@@ -352,9 +385,14 @@
                             show_name: '{{$ticket->shows->name}}',
                             artist_name: '{{ $ticket->shows->artists->name }}',
                             venue_name: '{{ $ticket->shows->venues->name }}',
+                            venue_address: '{{ $ticket->shows->venues->address }}',
                             venue_city: '{{ $ticket->shows->venues->city }}',
+                            venue_zip: '{{ $ticket->shows->venues->zip }}',
                             venue_state: '{{ $ticket->shows->venues->state }}',
                             featured_image: '{{ $ticket->shows->featured_image }}',
+                            offer_date: '{{ $ticket->ticketDate }}',
+                            price: '{{ $ticket->shows->price }}',
+                            description: '{{ str_limit($ticket->shows->description, $limit = 200, $end = '...') }}',
                             latest_tickets_month: moment('{{$ticket->ticketDate}}').format("MMM"),
                             latest_tickets_day: moment('{{$ticket->ticketDate}}').format("D"),
                             latest_tickets_date: moment('{{$ticket->ticketDate}}').format("MMM D"),
@@ -373,9 +411,14 @@
                           show_name: '{{$ticket->shows->name}}',
                           artist_name: '{{ $ticket->shows->artists->name }}',
                           venue_name: '{{ $ticket->shows->venues->name }}',
+                          venue_address: '{{ $ticket->shows->venues->address }}',
                           venue_city: '{{ $ticket->shows->venues->city }}',
+                          venue_zip: '{{ $ticket->shows->venues->zip }}',
                           venue_state: '{{ $ticket->shows->venues->state }}',
                           featured_image: '{{ $ticket->shows->featured_image }}',
+                          offer_date: '{{ $ticket->ticketDate }}',
+                          price: '{{ $ticket->shows->price }}',
+                          description: '{{ str_limit($ticket->shows->description, $limit = 200, $end = '...') }}',
                           latest_tickets_month: moment('{{$ticket->ticketDate}}').format("MMM"),
                           latest_tickets_day: moment('{{$ticket->ticketDate}}').format("D"),
                           latest_tickets_date: moment('{{$ticket->ticketDate}}').format("MMM D"),
@@ -419,6 +462,9 @@
                 featured_image: value.featured_image,
                 latest: value.latest_tickets,
                 tickets: value.tickets,
+                offer_date: value.latest_tickets,
+                price: value.price,
+                description: value.description.substring(0, length),
                 latest_tickets_month: moment(value.latest_tickets.ticketDate).format("MMM"),
                 latest_tickets_day: moment(value.latest_tickets.ticketDate).format("D"),
                 latest_tickets_date: moment(value.latest_tickets.ticketDate).format("MMM D"),
@@ -460,6 +506,9 @@
                     featured_image: value.featured_image,
                     latest: value.latest_tickets,
                     tickets: value.tickets,
+                    offer_date: value.latest_tickets,
+                    price: value.price,
+                    description: value.description.substring(0, length),
                     latest_tickets_month: moment(value.latest_tickets.ticketDate).format("MMM"),
                     latest_tickets_day: moment(value.latest_tickets.ticketDate).format("D"),
                     latest_tickets_date: moment(value.latest_tickets.ticketDate).format("MMM D"),
@@ -476,9 +525,14 @@
                         show_name: '{{$ticket->shows->name}}',
                         artist_name: '{{ $ticket->shows->artists->name }}',
                         venue_name: '{{ $ticket->shows->venues->name }}',
+                        venue_address: '{{ $ticket->shows->venues->address }}',
                         venue_city: '{{ $ticket->shows->venues->city }}',
+                        venue_zip: '{{ $ticket->shows->venues->zip }}',
                         venue_state: '{{ $ticket->shows->venues->state }}',
                         featured_image: '{{ $ticket->shows->featured_image }}',
+                        offer_date: '{{$ticket->ticketDate}}',
+                        price: '{{ $ticket->shows->price }}',
+                        description: '{{ str_limit($ticket->shows->description, $limit = 200, $end = '...') }}',
                         latest_tickets_month: moment('{{$ticket->ticketDate}}').format("MMM"),
                         latest_tickets_day: moment('{{$ticket->ticketDate}}').format("D"),
                         latest_tickets_date: moment('{{$ticket->ticketDate}}').format("MMM D"),
@@ -501,6 +555,9 @@
                           venue_city: '{{ $ticket->shows->venues->city }}',
                           venue_state: '{{ $ticket->shows->venues->state }}',
                           featured_image: '{{ $ticket->shows->featured_image }}',
+                          offer_date: '{{$ticket->ticketDate}}',
+                          price: '{{ $ticket->shows->price }}',
+                          description: '{{ str_limit($ticket->shows->description, $limit = 200, $end = '...') }}',
                           latest_tickets_month: moment('{{$ticket->ticketDate}}').format("MMM"),
                           latest_tickets_day: moment('{{$ticket->ticketDate}}').format("D"),
                           latest_tickets_date: moment('{{$ticket->ticketDate}}').format("MMM D"),
