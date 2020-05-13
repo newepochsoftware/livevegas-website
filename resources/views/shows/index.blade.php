@@ -13,7 +13,7 @@
           <td>ID</td>
           <td>Show</td>
           <td>Performer</td>
-          <td>EventStatus</td>
+          <td>Event Status</td>
           <td>Venue</td>
           <td></td>
           <td></td>

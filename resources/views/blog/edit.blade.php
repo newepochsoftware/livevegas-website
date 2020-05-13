@@ -50,7 +50,7 @@
                  <input type="text" class="form-control" value="Press" name="category"/>
                 </div>
                 <div class="form-group">
-                 <label for="featured_image">Featured Image (350px x 200px)</label>
+                 <label for="featured_image">Featured Image (700px x 500px)</label>
                  <input type="file" name="featured_image" class="form-control" id="featured_image">
                 </div>
               </div>

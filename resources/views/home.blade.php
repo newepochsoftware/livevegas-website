@@ -252,7 +252,7 @@
                 </div>
               </div>
               <a href="/shows/<% lvShow.slug %>" class="btn btn-danger btn-block">
-                View All Shows
+                Show Dates
               </a>
             </div>
 

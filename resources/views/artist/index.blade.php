@@ -56,7 +56,7 @@
     <meta property="og:title" content="Live Vegas | Live Events, Concert Ticekts, Tour News, Venues">
     <meta property="og:description" content="Buy concert tickets and get the latest tour news and artist insight on Live Vegas.">
     <meta property="og:image" content="https://storage.googleapis.com/livevegas-bucket/livevegas-og.jpg">
-    
+
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/kof2hht.css">
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="artist-get-tickets">
-                  <a href="{{ $ticket->ticket_url }}" target="_blank" class="btn btn-danger btn-lg btn-block">Buy Tickets</a>
+                  <a href="{{ $ticket->ticket_url }}" target="_blank" class="btn btn-danger btn-lg btn-block">Show Dates</a>
                 </div>
               </div>
             </div>

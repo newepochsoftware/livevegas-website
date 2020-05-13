@@ -43,7 +43,7 @@
                   <label for="title">Status:</label>
                   <select class="custom-select d-block w-100" id="status" name="status">
                     <option value="Active">Active</option>
-                    <option value="InActive">InActive</option>
+                    <option value="InActive">In-Active</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -51,7 +51,7 @@
                  <input type="text" class="form-control" value="Press" name="category"/>
                 </div>
                 <div class="form-group">
-                 <label for="featured_image">Featured Image (350px x 200px)</label>
+                 <label for="featured_image">Featured Image (700px x 500px)</label>
                  <input type="file" name="featured_image" class="form-control" id="featured_image">
                 </div>
               </div>

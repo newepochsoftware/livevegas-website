@@ -191,7 +191,7 @@
               </div>
 
               <div class="artist-get-tickets">
-                <a href="/shows/<% lvShow.slug %>" class="btn btn-danger btn-lg btn-block">View all shows</a>
+                <a href="/shows/<% lvShow.slug %>" class="btn btn-danger btn-lg btn-block">Show Dates</a>
               </div>
             </div>
           </div>
