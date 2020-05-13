@@ -594,6 +594,15 @@ label {
     font-size: 14px;
     line-height: 16px;
   }
+  .artist-get-tickets {
+    float: left;
+    width: 30%;
+    padding: 5px 0 0 0;
+  }
+  .artist-dates {
+    width: 30%;
+    float: left;
+  }
 }
 @media screen and (max-width: 767px) {
   .artist-thumb {

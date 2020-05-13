@@ -19,6 +19,11 @@
 
 								<label for="venue_type">City</label>
 								<input type="text" name="venue_city" class="form-control" id="venue_city" placeholder="Las Vegas" value="{{ $venues->city }}">
+
+								<label for="map_embed">Google Map URL</label>
+								<input type="text" name="map_embed" class="form-control" id="map_embed" value="{{ $venues->map_embed }}">
+
+								<br/>
 								<button type="submit" class="btn btn-danger">Submit</button>
 
 							</div>

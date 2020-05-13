@@ -14,7 +14,7 @@
           <td>Name</td>
           <td>Address</td>
           <td></td>
-          <td></td>
+          <!-- <td></td> -->
           <td></td>
         </tr>
     </thead>
@@ -25,7 +25,7 @@
             <td>{{$venue->name}}</td>
             <td>{{$venue->address}} {{$venue->city}}, {{$venue->state}} {{$venue->zip}}</td>
             <td><a href="{{ route('venues.edit',$venue->id)}}" class="btn btn-primary">Edit</a></td>
-            <td><a href="/venues/{{ $venue->id }}" target="_blank" class="btn btn-success">View</a></td>
+            <!-- <td><a href="/venues/{{ $venue->id }}" target="_blank" class="btn btn-success">View</a></td> -->
             <td>
                 <form action="{{ route('venues.destroy', $venue->id)}}" method="post">
                   @csrf
